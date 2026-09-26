@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="أقدر - منصة تعليمية وتفاعلية لدعم الأشخاص ذوي الإعاقة الذهنية">
+    <title>أقدر | كلنا نقدر</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Loading -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-logo">أقدر</div>
+        <p>كلنا نقدر 💜</p>
+    </div>
+
+    <!-- ================= AUTH ================= -->
+    <section id="authSection" class="auth-section">
+
+        <div class="auth-card">
+
+            <div class="brand">
+                <div class="brand-icon">💜</div>
+                <h1>أقدر</h1>
+                <p>كلنا نقدر</p>
+            </div>
+
+            <!-- Login -->
+            <div id="loginBox">
+
+                <h2>أهلاً بيك 👋</h2>
+                <p class="auth-subtitle">سجل دخولك علشان تبدأ</p>
+
+                <form id="loginForm">
+
+                    <label>رقم ولي الأمر</label>
+                    <input
+                        type="tel"
+                        id="loginPhone"
+                        placeholder="مثال: 01012345678"
+                        required
+                    >
+
+                    <label>كلمة المرور</label>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="اكتب كلمة المرور"
+                        required
+                    >
+
+                    <button class="primary-btn" type="submit">
+                        تسجيل الدخول
+                    </button>
+
+                </form>
+
+                <button id="showRegister" class="text-btn">
+                    إنشاء حساب جديد
+                </button>
+
+                <button id="demoLogin" class="demo-btn">
+                    تجربة الموقع بدون تسجيل
+                </button>
+
+            </div>
+
+            <!-- Register -->
+            <div id="registerBox" class="hidden">
+
+                <h2>إنشاء حساب جديد ✨</h2>
+                <p class="auth-subtitle">اختار بياناتك وابدأ رحلتك</p>
+
+                <form id="registerForm">
+
+                    <label>الاسم</label>
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="اكتب الاسم"
+                        required
+                    >
+
+                    <label>رقم ولي الأمر</label>
+                    <input
+                        type="tel"
+                        id="registerPhone"
+                        placeholder="مثال: 01012345678"
+                        required
+                    >
+
+                    <label>العمر</label>
+                    <input
+                        type="number"
+                        id="registerAge"
+                        min="5"
+                        max="100"
+                        placeholder="العمر"
+                        required
+                    >
+
+                    <label>كلمة المرور</label>
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="اختار كلمة مرور"
+                        required
+                    >
+
+                    <button class="primary-btn" type="submit">
+                        إنشاء الحساب
+                    </button>
+
+                </form>
+
+                <button id="showLogin" class="text-btn">
+                    عندي حساب بالفعل
+                </button>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ================= APP ================= -->
+    <div id="app" class="app hidden">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="small-logo">💜</div>
+                <div>
+                    <strong>أقدر</strong>
+                    <span>كلنا نقدر</span>
+                </div>
+            </div>
+
+            <nav>
+
+                <button class="nav-btn active" data-page="home">
+                    🏠
+                    <span>الرئيسية</span>
+                </button>
+
+                <button class="nav-btn" data-page="activities">
+                    🎯
+                    <span>الأنشطة</span>
+                </button>
+
+                <button class="nav-btn" data-page="community">
+                    💬
+                    <span>المجتمع</span>
+                </button>
+
+                <button class="nav-btn" data-page="information">
+                    📚
+                    <span>معلومات ودعم</span>
+                </button>
+
+                <button class="nav-btn" data-page="support">
+                    👨‍👩‍👧
+                    <span>ولي الأمر</span>
+                </button>
+
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                🚪 تسجيل الخروج
+            </button>
+
+        </aside>
+
+
+        <!-- Main -->
+        <main class="main-content">
+
+            <!-- Header -->
+            <header class="topbar">
+
+                <div>
+                    <h2 id="pageTitle">الرئيسية</h2>
+                    <p id="welcomeText">أهلاً بيك 👋</p>
+                </div>
+
+                <div class="points-box">
+                    ⭐
+                    <span id="points">0</span>
+                    نقطة
+                </div>
+
+            </header>
+
+
+            <!-- ================= HOME ================= -->
+            <section id="homePage" class="page active-page">
+
+                <div class="hero">
+
+                    <div class="hero-text">
+
+                        <span class="hero-label">منصة أقدر 💜</span>
+
+                        <h1>
+                            كلنا نقدر
+                        </h1>
+
+                        <p>
+                            مساحة آمنة وبسيطة تساعد الأشخاص ذوي الإعاقة الذهنية
+                            على التعلم والتدريب والتواصل بطريقة مناسبة وممتعة.
+                        </p>
+
+                        <button class="primary-btn" data-go="activities">
+                            ابدأ الأنشطة 🎯
+                        </button>
+
+                    </div>
+
+                    <div class="hero-art">
+                        💜
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <span>⭐</span>
+                        <strong id="homePoints">0</strong>
+                        <small>النقاط</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>🎯</span>
+                        <strong id="completedCount">0</strong>
+                        <small>أنشطة مكتملة</small>
+                    </div>
+
+                    <div class="stat-card">
+                        <span>📚</span>
+                        <strong>8+</strong>
+                        <small>موضوعات دعم</small>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-section">
+
+                    <h2>ابدأ من هنا 💜</h2>
+
+                    <div class="quick-grid">
+
+                        <button class="quick-card" data-go="activities">
+                            <span>🎯</span>
+                            <h3>الأنشطة</h3>
+                            <p>أنشطة بسيطة للتعلم والتركيز والذاكرة.</p>
+                        </button>
+
+                        <button class="quick-card" data-go="information">
+                            <span>📖</span>
+                            <h3>اعرف أكتر</h3>
+                            <p>معلومات عن الإعاقة الذهنية وطرق الدعم.</p>
+                        </button>
+
+                        <button class="quick-card" data-go="community">
+                            <span>💬</span>
+                            <h3>المجتمع</h3>
+                            <p>شارك أفكارك وتواصل مع الآخرين.</p>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= ACTIVITIES ================= -->
+            <section id="activitiesPage" class="page">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">تعلم بطريقة ممتعة</span>
+                        <h2>الأنشطة 🎯</h2>
+                        <p>
+                            كل نشاط مكتمل = 10 نقاط ⭐
+                        </p>
+                    </div>
+
+                </div>
+
+                <div id="activitiesContainer" class="activities-grid"></div>
+
+            </section>
+
+
+            <!-- ================= COMMUNITY ================= -->
+            <section id="communityPage" class="page">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">مع بعض</span>
+                        <h2>المجتمع 💬</h2>
+                        <p>
+                            شارك أفكارك وتجاربك بطريقة آمنة ومحترمة.
+                        </p>
+                    </div>
+
+                    <button id="openPostBtn" class="primary-btn">
+                        + منشور جديد
+                    </button>
+
+                </div>
+
+                <div class="safety-note">
+                    💜 من فضلك لا تشارك رقم الهاتف أو العنوان أو أي بيانات شخصية.
+                </div>
+
+                <div id="postsContainer"></div>
+
+            </section>
+
+
+            <!-- ================= INFORMATION ================= -->
+            <section id="informationPage" class="page">
+
+                <div class="information-hero">
+
+                    <span>📚 معلومات مهمة</span>
+
+                    <h1>
+                        الإعاقة الذهنية
+                    </h1>
+
+                    <p>
+                        فهم الشخص ودعمه يبدأ بالمعرفة والاحترام.
+                        كل شخص لديه قدراته واحتياجاته الخاصة.
+                    </p>
+
+                </div>
+
+
+                <div class="info-grid">
+
+                    <article class="info-card">
+
+                        <div class="info-icon">🧠</div>
+
+                        <h3>ما هي الإعاقة الذهنية؟</h3>
+
+                        <p>
+                            هي حالة تؤثر على بعض جوانب التعلم وحل المشكلات
+                            والمهارات اليومية والتكيف مع المواقف المختلفة.
+                            وتختلف القدرات والاحتياجات من شخص لآخر.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="info-icon">💪</div>
+
+                        <h3>نقاط القوة</h3>
+
+                        <p>
+                            بعض الأشخاص قد يتميزون في المهارات العملية،
+                            أو الفن، أو التفاعل الاجتماعي، أو تذكر الأشياء
+                            بطريقة معينة. المهم هو التركيز على قدرات الشخص
+                            وليس فقط على الصعوبات.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="info-icon">🗣️</div>
+
+                        <h3>طريقة التواصل</h3>
+
+                        <p>
+                            استخدم كلمات بسيطة وواضحة، وتحدث بهدوء،
+                            وأعطِ الشخص وقتًا كافيًا لفهم السؤال والرد.
+                            يمكن استخدام الصور أو الإشارات عند الحاجة.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="info-icon">🎓</div>
+
+                        <h3>في التعليم</h3>
+
+                        <p>
+                            تقسيم المهمة إلى خطوات صغيرة، استخدام الأمثلة
+                            والصور والتكرار، وتشجيع الشخص عند تحقيق تقدم
+                            يمكن أن يساعد على التعلم بشكل أفضل.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="info-icon">🏠</div>
+
+                        <h3>في الحياة اليومية</h3>
+
+                        <p>
+                            يمكن المساعدة في تنظيم الروتين، استخدام قوائم
+                            وصور للتذكير، وتشجيع الشخص على القيام بالأشياء
+                            التي يستطيع القيام بها بنفسه.
+                        </p>
+
+                    </article>
+
+
+                    <article class="info-card">
+
+                        <div class="info-icon">❤️</div>
+
+                        <h3>الدعم النفسي والاجتماعي</h3>
+
+                        <p>
+                            الاستماع والاحترام وعدم السخرية أو التقليل من
+                            الشخص أمر مهم. شجعه على المشاركة واتخاذ
+                            القرارات المناسبة له.
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <div class="how-to-section">
+
+                    <h2>إزاي نتعامل معاهم؟ 💜</h2>
+
+                    <div class="tips-grid">
+
+                        <div class="tip">
+                            <strong>01</strong>
+                            <h3>اتكلم ببساطة</h3>
+                            <p>استخدم جمل قصيرة ومفهومة.</p>
+                        </div>
+
+                        <div class="tip">
+                            <strong>02</strong>
+                            <h3>ادي وقت</h3>
+                            <p>ما تستعجلش في انتظار الرد.</p>
+                        </div>
+
+                        <div class="tip">
+                            <strong>03</strong>
+                            <h3>اشرح خطوة خطوة</h3>
+                            <p>قسم المهمة الكبيرة إلى خطوات أصغر.</p>
+                        </div>
+
+                        <div class="tip">
+                            <strong>04</strong>
+                            <h3>شجع الاستقلال</h3>
+                            <p>ساعد فقط عندما تكون المساعدة مطلوبة.</p>
+                        </div>
+
+                        <div class="tip">
+                            <strong>05</strong>
+                            <h3>احترم الاختيارات</h3>
+                            <p>خلي الشخص يشارك في القرارات الخاصة به.</p>
+                        </div>
+
+                        <div class="tip">
+                            <strong>06</strong>
+                            <h3>ركز على القدرات</h3>
+                            <p>شوف الشخص يستطيع يعمل إيه وادعمه فيه.</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="avoid-section">
+
+                    <h2>حاجات نتجنبها ❌</h2>
+
+                    <ul>
+                        <li>السخرية أو التنمر.</li>
+                        <li>التحدث عن الشخص وكأنه غير موجود.</li>
+                        <li>افتراض أنه لا يستطيع التعلم.</li>
+                        <li>الاستعجال عليه أثناء الكلام أو العمل.</li>
+                        <li>إجباره على شيء بدون شرح أو مشاركة.</li>
+                        <li>مقارنته بالآخرين بطريقة تقلل منه.</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="important-note">
+
+                    <strong>💡 مهم جدًا</strong>
+
+                    <p>
+                        الإعاقة الذهنية ليست وصفًا كاملًا للشخص.
+                        لكل شخص شخصيته وقدراته واحتياجاته،
+                        لذلك الأفضل دائمًا معرفة ما يناسب كل فرد.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================= SUPPORT ================= -->
+            <section id="supportPage" class="page">
+
+                <div class="section-heading">
+
+                    <div>
+                        <span class="section-label">المتابعة</span>
+                        <h2>ولي الأمر 👨‍👩‍👧</h2>
+                        <p>تابع التقدم والأنشطة التي تم إنجازها.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="parent-card">
+
+                    <div class="parent-icon">👨‍👩‍👧</div>
+
+                    <h2 id="supportUserName">-</h2>
+
+                    <p>
+                        رقم ولي الأمر:
+                        <strong id="supportPhone">-</strong>
+                    </p>
+
+                </div>
+
+
+                <div class="progress-card">
+
+                    <h3>التقدم ⭐</h3>
+
+                    <div class="progress-bar">
+                        <div id="progressFill"></div>
+                    </div>
+
+                    <p id="progressText">
+                        0 نشاط مكتمل
+                    </p>
+
+                </div>
+
+
+                <div>
+
+                    <h3>آخر الأنشطة</h3>
+
+                    <div id="historyContainer" class="history-list"></div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================= ACTIVITY MODAL ================= -->
+    <div id="activityModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" data-close="activityModal">
+                ×
+            </button>
+
+            <div id="activityContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= POST MODAL ================= -->
+    <div id="postModal" class="modal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" data-close="postModal">
+                ×
+            </button>
+
+            <h2>منشور جديد 💬</h2>
+
+            <textarea
+                id="postText"
+                placeholder="اكتب حاجة تحب تشاركها..."
+                rows="5"
+            ></textarea>
+
+            <label class="upload-box">
+
+                📷
+                <strong>إضافة صورة</strong>
+
+                <input
+                    type="file"
+                    id="postImage"
+                    accept="image/*"
+                >
+
+            </label>
+
+            <div id="imagePreview"></div>
+
+            <button id="publishPostBtn" class="primary-btn">
+                نشر المنشور
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
